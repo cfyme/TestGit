@@ -1,0 +1,10 @@
+/**
+ * 对字符串当中的JS代码 进行过滤,全部替换为"非法字符"
+ *
+ * @param str 要过滤的字符串
+ * @return 过滤后的字符串
+ */
+public static String doFilter(String str) {
+   str = Pattern.compile("<script.*?>.*?</script>", Pattern.CASE_INSENSITIVE).matcher(str).replaceAll("****");
+	return str;
+}
