@@ -1,0 +1,14 @@
+/**
+ * uuid参数合法性校验
+ * 
+ * @param uuid
+ *            全局唯一标识符（Universally Unique Identifier），共32个十六进制字符
+ */
+private void checkUUID(String uuid) {
+	if (StringUtil.isBlank(uuid)) {
+		throw new IllegalArgumentException("uuid can't be null or Empty !");
+	}
+	if( !uuid.matches("[0-9a-fA-F]{32}") ) {
+		throw new IllegalArgumentException("uuid was illegal!");
+	}
+}
